@@ -58,21 +58,21 @@ export default function CoursesSection() {
                   </h3>
 
                   <div className="mt-4 flex gap-2">
-                    <a
+                    {/* <a
                       href={course.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-center transition"
                     >
                       View Details
-                    </a>
+                    </a> */}
                     <a
                       href={course.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 py-2 rounded-lg text-center transition"
                     >
-                      Join
+                      Join Class
                     </a>
                   </div>
                 </div>

@@ -6,7 +6,7 @@ export default function AdminLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const links = [
-    { name: "Add Courses", path: "/admin/add-courses" },
+    { name: "Add Courses", path: "/adminDashboard" },
     { name: "Change Password", path: "/adminDashboard/ChangePassword" },
     { name: "Homepage", path: "/" },
   ];

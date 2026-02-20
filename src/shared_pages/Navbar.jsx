@@ -23,12 +23,7 @@ export default function Navbar() {
               <Link to="/adminLogin" className="hover:text-blue-600">
                 Admin
               </Link>
-              <a href="#" className="hover:text-blue-600">
-                About
-              </a>
-              <a href="#" className="hover:text-blue-600">
-                Contact
-              </a>
+              
             </div>
 
             {/* Desktop Button */}
@@ -76,12 +71,7 @@ export default function Navbar() {
           <Link to="/adminLogin" className="hover:text-blue-600">
             Admin
           </Link>
-          <a href="#" className="hover:text-blue-600">
-            About
-          </a>
-          <a href="#" className="hover:text-blue-600">
-            Contact
-          </a>
+          
 
           <button className="mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
             Login

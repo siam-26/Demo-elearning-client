@@ -3,7 +3,7 @@ import Navbar from "../shared_pages/Navbar";
 import Footer from "../shared_pages/Footer";
 
 
-const Main = () => {
+const Mainroute = () => {
   return (
     <div>
       <Navbar />
@@ -13,4 +13,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Mainroute;

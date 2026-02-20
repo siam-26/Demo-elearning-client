@@ -2,19 +2,15 @@ import React from 'react'
 import "./App.css";
 import Navbar from './shared_pages/Navbar';
 import Home from './pages/Homepage/Home/Home';
-import FeaturesSection from './pages/Homepage/FeaturedSection/FeaturedSection';
 import Footer from './shared_pages/Footer';
-import CoursesSection from './pages/Homepage/CoursesSection/CoursesSection';
+import { RouterProvider } from 'react-router';
+import router from './Routes/Routes';
 
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <Home />
-      <FeaturesSection/>
-      <CoursesSection/>
-      <Footer/>
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }

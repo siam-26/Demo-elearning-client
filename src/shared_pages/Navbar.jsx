@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,9 +19,10 @@ export default function Navbar() {
               <a href="#" className="hover:text-blue-600">
                 Courses
               </a>
-              <a href="#" className="hover:text-blue-600">
-                Categories
-              </a>
+
+              <Link to="/adminLogin" className="hover:text-blue-600">
+                Admin
+              </Link>
               <a href="#" className="hover:text-blue-600">
                 About
               </a>
@@ -71,9 +73,9 @@ export default function Navbar() {
           <a href="#" className="hover:text-blue-600">
             Courses
           </a>
-          <a href="#" className="hover:text-blue-600">
-            Categories
-          </a>
+          <Link to="/adminLogin" className="hover:text-blue-600">
+            Admin
+          </Link>
           <a href="#" className="hover:text-blue-600">
             About
           </a>

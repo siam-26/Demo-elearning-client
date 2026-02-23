@@ -5,6 +5,9 @@ import AdminLogin from "../Admin/AdminLogin/AdminLogin";
 import AdminLayout from "../Admin/AdminLayout/AdminLayout";
 import AddCourse from "../Admin/AddCourses/AddCourses";
 import ChangePassword from "../Admin/ChangePassword/ChangePassword";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
+
 
 const router = createBrowserRouter([
   {
@@ -41,13 +44,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/adminDashboard/ChangePassword",
-        element: <ChangePassword/>,
+        element: <ChangePassword />,
       },
     ],
   },
   {
     path: "/adminLogin",
     element: <AdminLogin />,
+  },
+  {
+    path: "/user/login",
+    element: <Login />,
+  },
+  {
+    path: "/user/register",
+    element: <Register/>,
   },
 ]);
 

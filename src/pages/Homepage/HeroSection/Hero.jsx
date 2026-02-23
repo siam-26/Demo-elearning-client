@@ -22,7 +22,7 @@ export default function HeroSection() {
         </p>
 
         {/* Buttons */}
-        <div className="mt-8 flex justify-center gap-4 flex-wrap">
+        {/* <div className="mt-8 flex justify-center gap-4 flex-wrap">
           <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-lg font-medium transition">
             Login
           </button>
@@ -30,7 +30,7 @@ export default function HeroSection() {
           <button className="bg-white text-blue-600 hover:bg-gray-200 px-6 py-3 rounded-lg text-lg font-medium transition">
             Sign Up
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Feature Cards */}

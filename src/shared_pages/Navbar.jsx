@@ -1,9 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router";
+import { Link, useNavigate, useLocation } from "react-router";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation(); // এটি রাউট পরিবর্তন ট্র্যাক করবে
+
+  // ১. localStorage থেকে ডাটা চেক করা
+  // const user = localStorage.getItem("user");
+
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    setUser(storedUser); // localStorage থেকে ডাটা নিয়ে স্টেট আপডেট করা
+  }, [location]);
+
+  
+  const handleLogout = () => {
+    localStorage.removeItem("user"); // ডাটা ডিলিট করা
+    setIsOpen(false);
+    navigate("/"); // লগইন পেজে পাঠানো
+  };
 
   return (
     <>
@@ -17,20 +36,41 @@ export default function Navbar() {
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8 font-medium">
               <a href="#" className="hover:text-blue-600">
+                Dashboard
+              </a>
+              <a href="#" className="hover:text-blue-600">
                 Courses
               </a>
-
-              <Link to="/adminLogin" className="hover:text-blue-600">
-                Admin
-              </Link>
-              
+              <a href="#" className="hover:text-blue-600">
+                Photo Zone
+              </a>
+              <a href="#" className="hover:text-blue-600">
+                Leads/Refferals
+              </a>
+              <a href="#" className="hover:text-blue-600">
+                Passbook
+              </a>
+              <a href="#" className="hover:text-blue-600">
+                Withdraw
+              </a>
             </div>
 
             {/* Desktop Button */}
             <div className="hidden md:block">
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-                Login
-              </button>
+              {user ? (
+                <button
+                  onClick={handleLogout}
+                  className="bg-red-500 text-white p-2 rounded w-full"
+                >
+                  Logout
+                </button>
+              ) : (
+                <Link to="/user/login">
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                    Login
+                  </button>
+                </Link>
+              )}
             </div>
 
             {/* Mobile Menu Button */}
@@ -66,16 +106,41 @@ export default function Navbar() {
 
         <div className="flex flex-col p-4 space-y-4 font-medium">
           <a href="#" className="hover:text-blue-600">
+            Dashboard
+          </a>
+          <a href="#" className="hover:text-blue-600">
             Courses
           </a>
-          <Link to="/adminLogin" className="hover:text-blue-600">
+          <a href="#" className="hover:text-blue-600">
+            Photo Zone
+          </a>
+          <a href="#" className="hover:text-blue-600">
+            Leads/Refferals
+          </a>
+          <a href="#" className="hover:text-blue-600">
+            Passbook
+          </a>
+          <a href="#" className="hover:text-blue-600">
+            Withdraw
+          </a>
+          {/* <Link to="/adminLogin" className="hover:text-blue-600">
             Admin
-          </Link>
-          
+          </Link> */}
 
-          <button className="mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
-            Login
-          </button>
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="bg-red-500 text-white p-2 rounded w-full"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link to="/user/login">
+              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </>
